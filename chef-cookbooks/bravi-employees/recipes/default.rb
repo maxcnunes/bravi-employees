@@ -11,3 +11,7 @@ include_recipe "git"
 include_recipe "nodejs::default"
 include_recipe "mongodb::10gen_repo"
 include_recipe "mongodb::default"
+
+execute "install global node modules" do
+  command "sudo npm install -g yo grunt-cli bower karma"
+end

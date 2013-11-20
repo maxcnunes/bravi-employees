@@ -1,4 +1,10 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem "berkshelf"
+group :infra do
+  gem "berkshelf"
+end
+
+group :dev do
+  gem "compass"
+end

@@ -1,1 +1,34 @@
-<p>This is the employees-list view.</p>
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">Bravi Employees</h3>
+</div>
+
+<div id="employees-list">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Birth</th>
+        <th>Github</th>
+        <th>Tecnologies</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="employee in employees">
+        <td>{{employee.name}}</td>
+        <td>{{employee.birthDate | date: 'dd/MM/yyyy'}}</td>
+        <td>{{employee.githubUsername}}</td>
+        <td>{{employee.knownTecnologies.join(', ')}}</td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <p>Bravi - 2013</p>
+</div>

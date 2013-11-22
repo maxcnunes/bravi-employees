@@ -1,0 +1,9 @@
+
+#employees-list{
+
+  table {
+    @extend .table;
+    @extend .table-hover;
+  }
+}
+

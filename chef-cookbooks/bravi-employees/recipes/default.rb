@@ -24,3 +24,8 @@ execute "include redirecting to /vagrant directory" do
    command "echo 'cd /vagrant' >> /home/vagrant/.bashrc"
    not_if "grep 'cd /vagrant' /home/vagrant/.bashrc"
 end
+
+execute "include vagrant flag" do
+   command "echo 'export VAGRANT=Y' >> /home/vagrant/.bashrc"
+   not_if "grep 'VAGRANT=Y' /home/vagrant/.bashrc"
+end

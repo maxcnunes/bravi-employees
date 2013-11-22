@@ -10,6 +10,7 @@
 module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
+  var isVagrant = process.env.VAGRANT && process.env.VAGRANT === 'Y';
 
   grunt.initConfig({
     yeoman: {
@@ -144,16 +145,18 @@ module.exports = function (grunt) {
     },
     compass: {
       options: {
+        config: 'config/compass.rb',
+        // cacheDir: '../tmp/sass-cache',
         sassDir: '<%= yeoman.app %>/styles',
         cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
+        // generatedImagesDir: '.tmp/images/generated',
         imagesDir: '<%= yeoman.app %>/images',
         javascriptsDir: '<%= yeoman.app %>/scripts',
         fontsDir: '<%= yeoman.app %>/fonts',
         importPath: '<%= yeoman.app %>/bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/fonts',
+        // httpImagesPath: '/images',
+        // httpGeneratedImagesPath: '/images/generated',
+        // httpFontsPath: '/fonts',
         relativeAssets: false
       },
       dist: {},
@@ -353,18 +356,19 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('server', function (target) {
+    var distTasks = ['build', 'express:prod', 'express-keepalive'];
+    var serverTasks = ['clean:server', 'concurrent:server', 'autoprefixer', 'express:dev', 'watch'];
+
+    if (isVagrant) {
+      distTasks.splice(2, 0, 'open');
+      serverTasks.splice(5, 0, 'open');
+    };
+
     if (target === 'dist') {
-      return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
+      return grunt.task.run(distTasks);
     }
 
-    grunt.task.run([
-      'clean:server',
-      'concurrent:server',
-      'autoprefixer',
-      'express:dev',
-      'open',
-      'watch'
-    ]);
+    grunt.task.run(serverTasks);
   });
 
   grunt.registerTask('test', [

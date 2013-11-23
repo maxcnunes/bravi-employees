@@ -1,9 +1,11 @@
 
-#employees-list{
+#employees-list {
+  #new-employee {
+    @extend .btn, .btn-primary, .btn-block;
+  }
 
   table {
-    @extend .table;
-    @extend .table-hover;
+    @extend .table, .table-hover;
   }
 }
 

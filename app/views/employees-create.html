@@ -23,11 +23,18 @@
 
     <div class="form-group">
       <label for="knownTechnologies">Known Technologies</label>
-      <input type="text" name="knownTechnologies" value="" id="knownTechnologies" placeholder="Javascript, Go, Node, Ruby, .NET, Java, C++" ng-model="employee.knownTechnologies">
+      <input type="text" class="form-control"
+        selected-item="selectedItem"
+        url="tagsQuery"
+        tags="employee.knownTechnologies"
+        auto-tags
+        name="knownTechnologies"
+        id="knownTechnologies"
+        placeholder="Js" />
     </div>
 
     <footer>
-      <button type="submit" ng-click="save()"><i />Save</button>
+      <button type="submit" ng-click="save($event)"><i />Save</button>
       <button type="button" ng-click="cancel()"><i />Cancel</button>
     </footer>
   </form>

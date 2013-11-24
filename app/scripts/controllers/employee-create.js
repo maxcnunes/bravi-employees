@@ -1,22 +1,17 @@
 'use strict';
 
 angular.module('braviEmployeesApp')
-  .controller('EmployeeCreateCtrl', function ($scope, EmployeeService) {
-    $scope.originalModel = {
-      name: '',
-      birthDate: '',
-      githubUsername: '',
-      knownTechnologies: ''
-    };
+  .controller('EmployeeCreateCtrl', function ($scope, EmployeeService, $http, _) {
+    $scope.tagsQuery = EmployeeService.getHttpPathTagsQuery();
     $scope.employee = {};
 
-    $scope.save = function() {
+    $scope.save = function(event) {
       EmployeeService.create($scope.employee)
         .success(function() {
           console.log('Saved');
         })
         .error(function(ex) {
-          console.log('Error: ' + ex);
+          console.log('Error: ' + ex.message);
         });
     };
 

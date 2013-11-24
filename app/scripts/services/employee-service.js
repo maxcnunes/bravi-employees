@@ -3,6 +3,9 @@
 angular.module('braviEmployeesApp')
   .service('EmployeeService', function EmployeeService($http) {
     var httpPath = '/api/employees',
+    getHttpPathTagsQuery = function(){
+     return httpPath + '/tags?tag=%QUERY';
+    },
     getAll = function(){
       return $http.get(httpPath);
     },
@@ -10,10 +13,6 @@ angular.module('braviEmployeesApp')
       return $http.get(httpPath + '/' + id);
     },
     create = function(model){
-      if (model.knownTechnologies) {
-        model.knownTechnologies = model.knownTechnologies.split(',');
-      }
-
       return $http.post(httpPath, model);
     },
     update = function(model){
@@ -24,6 +23,7 @@ angular.module('braviEmployeesApp')
     };
 
     return {
+      getHttpPathTagsQuery: getHttpPathTagsQuery,
       getAll: getAll,
       getById: getById,
       create: create,

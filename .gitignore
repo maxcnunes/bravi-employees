@@ -7,3 +7,4 @@ heroku
 .vagrant
 .bundle
 *.swp
+.DS_Store

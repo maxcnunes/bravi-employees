@@ -44,6 +44,7 @@ app.configure('production', function(){
 // Routes
 app.get('/api/employees', api.employees);
 app.post('/api/employees', api.create);
+app.get('/api/employees/tags/:tag?', api.tags);
 
 // Start server
 var port = process.env.PORT || 3000;

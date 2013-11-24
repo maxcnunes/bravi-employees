@@ -16,6 +16,10 @@ angular.module('braviEmployeesApp', [
         templateUrl: 'views/employees-list.html',
         controller: 'EmployeeListCtrl'
       })
+      .when('/employees/create', {
+        templateUrl: 'views/employees-create.html',
+        controller: 'EmployeeCreateCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

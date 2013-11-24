@@ -10,6 +10,10 @@ angular.module('braviEmployeesApp')
       return $http.get(httpPath + '/' + id);
     },
     create = function(model){
+      if (model.knownTechnologies) {
+        model.knownTechnologies = model.knownTechnologies.split(',');
+      }
+
       return $http.post(httpPath, model);
     },
     update = function(model){

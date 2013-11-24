@@ -1,7 +1,9 @@
-
+/* List
+================*/
 #employees-list {
   #new-employee {
     @extend .btn, .btn-primary, .btn-block;
+    i { @extend .glyphicon, .glyphicon-plus; }
   }
 
   table {
@@ -9,3 +11,21 @@
   }
 }
 
+/* Create
+================*/
+#employees-create {
+  form input[type="text"] { @extend .form-control; }
+
+  footer {
+    @extend .well, .well-sm;
+
+    button[type="submit"] {
+      @extend .btn, .btn-success;
+      i { @extend .glyphicon, .glyphicon-ok-sign; }
+    }
+    button[type="button"] {
+      @extend .btn, .btn-danger;
+      i { @extend .glyphicon, .glyphicon-ban-circle; }
+    }
+  }
+}

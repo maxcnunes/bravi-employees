@@ -1,0 +1,34 @@
+<section id="employees-create" role="form">
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" value="" ng-model="employee.name" placeholder="Jack White" ng-model="employee.name">
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="birthDate">Birth Date</label>
+        <input type="text" name="birthDate" value="" id="birthDate" placeholder="20/08/1985" ng-model="employee.birthDate">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="githubUsername">Github User Name</label>
+
+        <div class="input-group">
+          <span class="input-group-addon">https://github.com/</span>
+          <input type="text" name="githubUsername" value="" id="githubUsername" placeholder="jackwhite" ng-model="employee.githubUsername">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="knownTechnologies">Known Technologies</label>
+      <input type="text" name="knownTechnologies" value="" id="knownTechnologies" placeholder="Javascript, Go, Node, Ruby, .NET, Java, C++" ng-model="employee.knownTechnologies">
+    </div>
+
+    <footer>
+      <button type="submit" ng-click="save()"><i />Save</button>
+      <button type="button" ng-click="cancel()"><i />Cancel</button>
+    </footer>
+  </form>
+</section>

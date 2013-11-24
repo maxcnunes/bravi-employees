@@ -1,7 +1,5 @@
 <div id="employees-list">
-  <a id="new-employee" href="">
-    <i class="glyphicon glyphicon-plus"></i>
-    New Employee</a>
+  <a id="new-employee" href="#/employees/create"><i />New Employee</a>
   <table>
     <thead>
       <tr>
@@ -16,9 +14,8 @@
         <td>{{employee.name}}</td>
         <td>{{employee.birthDate | date: 'dd/MM/yyyy'}}</td>
         <td>{{employee.githubUsername}}</td>
-        <td>{{employee.knownTecnologies.join(', ')}}</td>
+        <td>{{employee.knownTechnologies.join(', ')}}</td>
       </tr>
-      <tr>
     </tbody>
   </table>
 </div>

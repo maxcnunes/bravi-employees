@@ -6,7 +6,8 @@ angular.module('braviEmployeesApp', [
   'ngSanitize',
   'ngRoute',
   'ngAnimate',
-  'toaster'
+  'toaster',
+  'ngGrid'
 ])
   .config(function ($routeProvider) {
     $routeProvider

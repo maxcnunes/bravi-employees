@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
         <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css">
+        <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.css">
 </head>
   <body ng-app="braviEmployeesApp">
     <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
@@ -60,6 +61,8 @@
         <script src="bower_components/typeahead.js/dist/typeahead.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+        <script src="bower_components/ng-grid/lib/jquery-ui-1.9.1.custom.min.js"></script>
+        <script src="bower_components/ng-grid/ng-grid-2.0.7.debug.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/modules.js -->
@@ -77,6 +80,7 @@
         <script src="scripts/controllers/employee-create.js"></script>
         <script src="scripts/directives/autoTagsDirective.js"></script>
         <script src="scripts/services/underscoreFactory.js"></script>
+        <script src="scripts/filters/joinFilter.js"></script>
         <!-- endbuild -->
 </body>
 </html>

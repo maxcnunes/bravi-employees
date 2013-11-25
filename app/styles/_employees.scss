@@ -6,9 +6,13 @@
     i { @extend .glyphicon, .glyphicon-plus; }
   }
 
-  table {
-    @extend .table, .table-hover;
+  .gridStyle {
+    border: 1px solid rgb(212,212,212);
+    min-height: 200px;
   }
+  //table {
+  //  @extend .table, .table-hover;
+  //}
 }
 
 /* Create

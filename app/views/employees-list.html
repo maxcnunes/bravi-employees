@@ -1,22 +1,5 @@
 <div id="employees-list">
   <a id="new-employee" href="#/employees/create"><i />New Employee</a>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Birth</th>
-        <th>Github</th>
-        <th>Tecnologies</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="employee in employees">
-        <td>{{employee.name}}</td>
-        <td>{{employee.birthDate | date: 'dd/MM/yyyy'}}</td>
-        <td>{{employee.githubUsername}}</td>
-        <td>{{employee.knownTechnologies.join(', ')}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="gridStyle" ng-grid="gridOptions"></div>
 </div>
 

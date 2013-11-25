@@ -4,7 +4,9 @@ angular.module('braviEmployeesApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngAnimate',
+  'toaster'
 ])
   .config(function ($routeProvider) {
     $routeProvider

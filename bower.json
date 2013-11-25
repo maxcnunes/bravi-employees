@@ -12,7 +12,9 @@
     "angular-sanitize": "~1.2.0",
     "angular-route": "~1.2.0",
     "underscore": "~1.5.2",
-    "typeahead.js": "~0.9.3"
+    "typeahead.js": "~0.9.3",
+    "AngularJS-Toaster": "*",
+    "angular-animate": "~1.2.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

@@ -1,5 +1,9 @@
 <div id="employees-list">
   <a id="new-employee" href="#/employees/create"><i />New Employee</a>
-    <div class="gridStyle" ng-grid="gridOptions"></div>
+    <div id="filter-tech">
+      <label>Filter Technoligie:</label>
+      <input type="text" ng-model="gridOptions.filterOptions.inputFilterText"/>
+    </div>
+    <div class="grid" ng-grid="gridOptions"></div>
 </div>
 

@@ -6,13 +6,16 @@
     i { @extend .glyphicon, .glyphicon-plus; }
   }
 
-  .gridStyle {
+  .grid {
     border: 1px solid rgb(212,212,212);
     min-height: 200px;
   }
-  //table {
-  //  @extend .table, .table-hover;
-  //}
+
+  #filter-tech {
+    @extend .well, .well-sm;
+    text-align: center;
+    margin: 1px;
+  }
 }
 
 /* Create

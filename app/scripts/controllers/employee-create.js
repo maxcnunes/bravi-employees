@@ -9,7 +9,7 @@ angular.module('braviEmployeesApp')
       EmployeeService.create($scope.employee)
         .success(function() {
           toaster.pop('success', '', 'successfully saved');
-          $location.path('/employees');
+          goToEmployees();
         })
         .error(function(ex) {
           toaster.pop('error', '', 'Error: ' + ex.message);
@@ -17,8 +17,10 @@ angular.module('braviEmployeesApp')
     };
 
     $scope.cancel = function() {
-      $scope.user = angular.copy($scope.originalModel);
+      goToEmployees();
     };
 
-    $scope.cancel();
+    var goToEmployees = function() {
+      $location.path('/employees');
+    };
   });
